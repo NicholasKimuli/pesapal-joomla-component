@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS `#__donations` (
+`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`fname` varchar(250) NOT NULL,
+`lname` varchar(255) NOT NULL,
+`email` varchar(255) NOT NULL,
+`mobile` varchar(255) NOT NULL,
+`address` varchar(255)  NULL,
+`city` varchar(255)  NULL,
+`zipcode` varchar(255)  NULL,
+`method` varchar(255)  NULL,
+`country` varchar(255)  NULL,
+`amount` INT  NULL,
+`description` TEXT  NULL,
+`reference` TEXT  NULL,
+`tracking_id` TEXT  NULL,
+`currency` varchar(25) NOT NULL,
+`status` varchar(25) NOT NULL,
+`params`   VARCHAR(1024) NOT NULL DEFAULT '',
+date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;

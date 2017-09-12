@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset label="COM_DONATION_SETTINGS_LABEL" name="pesapal_donation">
+        <field name="consumerkey" filter="safehtml" type="text" label="COM_DONATION_FORM_CONSUMERKEY" description="COM_DONATION_FORM_DESC_CONSUMERKEY" hint="COM_DONATION_FORM_CONSUMERKEY"/>
+        
+        <field name="consumersecret" filter="safehtml" type="text" label="COM_DONATION_FORM_CONSUMERSECRET" description="COM_DONATION_FORM_DESC_CONSUMERSECRET" hint="COM_DONATION_FORM_CONSUMERSECRET"/>
+
+    </fieldset>
+</config>
