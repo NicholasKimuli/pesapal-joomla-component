@@ -32,19 +32,28 @@ class DonationModelDonation extends JModelItem
 		if (!isset($this->message))
 		{
 			$jinput = JFactory::getApplication()->input;
-            $id     = $jinput->get('id', 1, 'INT');
-            $fname = $_POST['fname'];
+            $reference     = $jinput->get('reference');
 
-			// switch ($id)
-			// {
-			// 	case 2:
-			// 		$this->message = 'Good bye World!';
-			// 		break;
-			// 	default:
-			// 	case 1:
-					$this->message = $fname;
-			// 		break;
-			// }
+			// Get donation record using reference code
+			// Get a db connection.
+			$db = JFactory::getDbo();
+
+			// Create a new query object.
+			$query = $db->getQuery(true);
+
+			// Select all records from the user profile table where key begins with "custom.".
+			// Order it by the ordering field.
+			$query->select('*');
+			$query->from($db->quoteName('#__donations'));
+			$query->where($db->quoteName('reference') . ' LIKE '. $db->quote($reference));
+
+			// Reset the query using our newly populated query object.
+			$db->setQuery($query);
+
+			// Load the results as a list of stdClass objects (see later for more options on retrieving data).
+			$result = $db->loadObject();
+			
+			$this->message = $result;
 		}
 
 		return $this->message;
