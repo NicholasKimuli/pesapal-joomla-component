@@ -18,23 +18,20 @@ defined('_JEXEC') or die('Restricted Access');
 			<th width="10%">
                 <?php echo JText::_('COM_DONATION_NUM'); ?>
             </th>
-			<th width="5%">
-				<?php echo JHtml::_('grid.checkall'); ?>
-			</th>
 			<th width="20%">
                 <?php echo JText::_('COM_DONATION_NAME') ;?>
 			</th>
 			<th width="20%">
                 <?php echo JText::_('COM_DONATION_EMAIL'); ?>
 			</th>
-			<th width="20%">
+			<th width="15%">
                 <?php echo JText::_('COM_DONATION_AMOUNT'); ?>
 			</th>
-			<th width="20%">
+			<th width="15%">
                 <?php echo JText::_('COM_DONATION_MOBILE'); ?>
 			</th>
-			<th width="5%">
-                <?php echo JText::_('COM_DONATION_ID'); ?>
+			<th width="20%">
+                <?php echo JText::_('COM_DONATION_STATUS'); ?>
 			</th>
 		</tr>
 		</thead>
@@ -54,9 +51,6 @@ defined('_JEXEC') or die('Restricted Access');
 							<?php echo $this->pagination->getRowOffset($i); ?>
 						</td>
 						<td>
-                            <?php echo JHtml::_('grid.id', $i, $row->id); ?>
-						</td>
-						<td>
                             <?php echo $row->fname . ' ' . $row->lname; ?>
 						</td>
 						<td align="center">
@@ -69,7 +63,7 @@ defined('_JEXEC') or die('Restricted Access');
 							<?php echo $row->mobile; ?>
 						</td>
 						<td align="center">
-							<?php echo $row->id; ?>
+							<?php echo $row->status; ?>
 						</td>
 					</tr>
 				<?php endforeach; ?>
