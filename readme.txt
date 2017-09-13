@@ -55,3 +55,4 @@ Data from the database is pulled via the model and is displayed using the templa
 5. Conclusion
 
 I used the MVC approach touted by Joomla! but not in all cases. There are some cases where queries were made on the view as opposed to the model. 
+
